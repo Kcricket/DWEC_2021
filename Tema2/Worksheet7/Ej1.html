@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var distance = 0;
+        var lastPosition;
+
+        console.log(lastPosition);
+
+        if ("geolocation" in navigator) {
+            navigator.geolocation.watchPosition(success, error, options);
+        } else {
+            console.error("Geolocation isn't available");
+        }
+
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        function success(pos) {
+            var crd = pos.coords;
+
+            console.log("Your current position is:");
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`Acurracy: ${crd.accuracy} meters.`);
+            console.log(`Distance traveled: ${distance} meters.`);
+
+            if(lastPosition != undefined)
+                distance += calculateDistance(lastPosition, crd);
+            
+            lastPosition = crd;
+        }
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        navigator.geolocation.getCurrentPosition(success, error, options);
+
+    </script>
+</body>
+</html>

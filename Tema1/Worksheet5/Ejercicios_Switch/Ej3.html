@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var numeroA = parseFloat(prompt("Introduzca un número"));
+        var numeroB = parseFloat(prompt("Introduzca otro número"));
+
+        var operacion = prompt("Introduzca la operación a realizar (+, -, *, /)");
+
+        switch (operacion) {
+            case "+":
+                document.write(numeroA+"+"+numeroB+" = "+(numeroA+numeroB));
+                break;
+            case "-":
+                document.write(numeroA+"-"+numeroB+" = "+(numeroA-numeroB));
+                break;
+            case "*":
+                document.write(numeroA+"*"+numeroB+" = "+(numeroA*numeroB));
+                break;
+            case "/":
+                document.write(numeroA+"/"+numeroB+" = "+(numeroA/numeroB));
+                break;
+            default:
+                document.write("Introduzca una de los operadores mencionados");
+                break;
+        }
+    </script>
+</body>
+</html>

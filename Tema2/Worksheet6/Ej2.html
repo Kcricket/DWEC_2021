@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a onclick="numeroImagenes()" href="#">Número de imágenes</a><br />
+    <a onclick="idPrimeraImagen()" href="#">Id primera imagen</a><br />
+    <a onclick="numeroEnlaces()" href="#">Número de enlaces</a><br />
+    <a onclick="cambiarTitulo()" href="#">Cambiar título a "Título cambiado"</a><br />
+    
+    <a href="http://google.es" target="_blank" rel="">Google</a><br />
+    <img src="fary1.jpg" alt="" width="60%" id="fary1"><br />
+    <a href="http://youtube.com" target="_blank" rel="">Youtube</a><br />
+    <img src="fary2.jpg" alt="" width="60%" id="fary2"><br />
+    <a href="http://manjaro.com" target="_blank" rel="">Manjaro</a><br />
+    <img src="fary3.jpg" alt="" width="60%" id="fary4"><br />
+    <script>
+        // 2c
+        function numeroImagenes() {
+            alert("Número de imágenes: "+document.images.length);
+        }
+
+        // 2d
+        function idPrimeraImagen() {
+            alert("Id de la primera imagen: "+document.images[0].id);
+        }
+
+        // 2e
+        function numeroEnlaces() {
+            alert("Número de enlaces: "+document.links.length);
+        }
+
+        //2f
+        function cambiarTitulo() {
+            document.title="Título cambiado";
+        }
+    </script>
+</body>
+</html>

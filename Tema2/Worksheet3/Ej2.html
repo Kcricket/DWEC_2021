@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>            
+            function infoCadena(cadena) {
+                let minusculas = false;
+                let mayusculas = false;
+                let i = 0;
+                do{
+                    if(cadena.charAt(i) == cadena.charAt(i).toUpperCase())
+                        mayusculas = true;
+                    else
+                        minusculas = true;
+                    ++i;
+                }while(!(minusculas && mayusculas) && i < cadena.length);
+                if (minusculas && mayusculas)
+                    document.write("La cadena " + cadena + " tiene minúsculas y mayúsculas");
+                else if (mayusculas)
+                    document.write("La cadena " + cadena + " está en mayúsculas");
+                else
+                    document.write("La cadena " + cadena + " está en minúsculas");
+            }
+
+            let cadena = prompt("Introduzca una cadena");
+            infoCadena(cadena);
+    </script>
+</body>
+</html>

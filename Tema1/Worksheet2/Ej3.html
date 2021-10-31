@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var radius = prompt("Introduce radius value:");
+        function circumference(r) {
+            document.write("<p>The circumference is " + (2*Math.PI*r) + "</p>");
+        }
+
+        function area(r) {
+            document.write("<p>The area is " + (Math.PI*r*r) + "</p>");
+        }
+        circumference(radius);
+        area(radius);
+        console.log(Math.PI);
+        
+    </script>
+    
+</body>
+</html>

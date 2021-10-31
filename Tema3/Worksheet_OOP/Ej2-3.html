@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Car{
+            constructor(model, milesPerGallon){
+                this.model= model
+                this.milesPerGallon= milesPerGallon
+                this.tank = 0;
+                this.odometer = 0;
+
+            }
+            fill(gallons){
+                this.tank += gallons;  
+                console.log("Filled with: "+gallons)
+            }
+            drive(miles){
+                this.odometer += miles;
+                let fuelNeeded= miles*this.milesPerGallon
+                this.tank >= fuelNeeded ? this.tank+= -fuelNeeded : console.log("No gas bro") 
+                console.log("Fuel after the drive: : "+this.tank)
+            }
+        }
+        var c= new Car("Astra", "7")
+        c.fill(5000);
+        c.drive(700)
+        
+        
+
+
+
+    </script>
+</body>
+</html>

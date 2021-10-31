@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Person{
+            constructor(name, age, stomach){
+                this.name= name
+                this.age = age 
+                this.stomach = stomach
+            }
+            eat(...food) {
+                this.stomach.push(...food);
+                console.log(this.stomach)
+            }
+            poop(){
+                this.stomach = [];
+            }
+            toString(name, age){
+                console.log(d.name+", "+d.age);
+            }
+        }
+        var d = new Person('juan', '70', []);
+
+        
+        d.eat('abuela', 'papelera');
+        //d.poop();
+        d.toString();
+        
+    </script>
+</body>
+</html>

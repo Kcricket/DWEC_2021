@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var celsius = parseFloat(prompt("Introduzca la temperatura en celsius"));
+        var fahrenheit = (celsius * 9/5)+32;
+
+        document.write(celsius+"°C is equal to "+fahrenheit+"°F");
+        document.write("<br>");
+
+        fahrenheit = parseFloat(prompt("Introduzca otra temperatura en fahrenheit"));
+        celsius = (fahrenheit-32)*5/9;
+        document.write(fahrenheit+"°F is "+celsius+"°C");
+    </script>
+</body>
+</html>

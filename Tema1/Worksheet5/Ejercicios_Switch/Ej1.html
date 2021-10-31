@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var mes = prompt("Introduzca el nombre de un mes");
+        var dias;
+
+        switch (mes.toLowerCase()) {
+            case "enero":
+            case "marzo":
+            case "mayo":
+            case "julio":
+            case "agosto":
+            case "octubre":
+            case "diciembre":
+                dias = 31;
+                break;
+            case "febrero":
+                dias = 28;
+                break;
+            case "abril":
+            case "junio":
+            case "septiembre":
+            case "noviembre":
+                dias = 30;
+                break;
+            default:
+                document.write("No existe el mes "+mes);
+                dias = 0;
+                break;
+        }
+        dias!=0? document.write("El mes "+mes+" tiene "+dias+" días."):console.log("error")
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esPalindromo(cadena) {
+            let palindromo = true;
+            let i = 0;
+            cadena = cadena.replace(/\s+/g, "").toLowerCase();
+
+            while (palindromo && i <= cadena.length/2) {
+                if (cadena.charAt(i) != cadena.charAt(cadena.length-1-i)) {
+                    palindromo = false;
+                }
+                ++i;
+            }
+            return palindromo;
+        }
+
+        let cadena = "Hola compae";
+        document.write(esPalindromo(cadena));
+    </script>
+</body>
+</html>

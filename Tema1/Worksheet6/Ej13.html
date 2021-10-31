@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var col = parseInt(prompt("Introduzca el número de columnas"));
+        var anchoCelda = parseInt(prompt("Introduzca el ancho de la celda"));
+        var altoCelda = parseInt(prompt("Introduzca el alto de la celda"));
+
+        document.write("<table border=\"0\" cellspacing=\"2\" bgcolor=\"black\">");
+        document.write("<tr height=\""+altoCelda+"\">");
+        var i=0;
+        while (i<col) {
+            document.write("<td bgcolor=\"white\" width=\""+anchoCelda+"\"> &nbsp; </td>");
+            i++;
+        }
+        document.write("</tr>");
+        document.write("</table>");
+    </script>
+</body>
+</html>

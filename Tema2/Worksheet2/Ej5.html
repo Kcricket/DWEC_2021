@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let a = parseFloat(prompt("Introduzca el valor a"));
+        let b = parseFloat(prompt("Introduzca el valor b"));
+        let c = parseFloat(prompt("Introduzca el valor c"));
+
+        let solucion1 = (-b + Math.sqrt(b*b-4*a*c))/(2*a);
+        let solucion2 = (-b -+ Math.sqrt(b*b-4*a*c))/(2*a);
+
+        document.write("Solución con raiz positiva: " + solucion1 + "<br>");
+        document.write("Solución con raiz negativa: " + solucion2 + "<br>");
+    </script>
+</body>
+</html>

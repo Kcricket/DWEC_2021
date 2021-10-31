@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // A: Cadena Invertida 
+        document.write("<h3>a)</h3>");
+
+        function inverteCadena(cad_arg) {
+            let cadenaInvertida = "";
+            for (let i = cad_arg.length - 1; i >= 0; i--) {
+                cadenaInvertida += cad_arg[i]; // ¿Sería más correcto usar el charAt()?
+            }
+            return cadenaInvertida;
+        }
+
+        var cadena = "Hola mu wenas";
+        document.write(cadena + "<br>");
+        document.write(inverteCadena(cadena));
+
+        //B: Palabras invertidas
+        document.write("<h3>b)</h3>");
+
+        function inviertePalabras(cad_arg) {
+            let cadenaDividida = cad_arg.split(" ");
+            let resultado = "";
+            for (const palabra of cadenaDividida) {
+                for (let i = palabra.length - 1; i >= 0; i--) {
+                    resultado += palabra[i]; // ¿Sería más correcto usar el charAt()?
+                }
+                resultado += " ";
+            }
+            return resultado;
+        }
+        cadena = "Hola mu wenas";
+        document.write(cadena + "<br>");
+        document.write(inviertePalabras(cadena));
+
+        //C: Palabra mas larga
+
+        document.write("<h3>c)</h3>");
+
+        function encuentraPalabraMasLarga(cad_arg) {
+            let cadenaDividida = cad_arg.split(" ");
+            let resultado = 0;
+            for (const palabra of cadenaDividida) {
+                if (palabra.length > resultado) {
+                    resultado = palabra.length;
+                }
+            }
+            return resultado;
+        }
+
+        cadena = "Hola mu wenas";
+        document.write(cadena + "<br>");
+        document.write(encuentraPalabraMasLarga(cadena));
+
+        // D: Palabras N
+        document.write("<h3>d)</h3>");
+
+        function filtraPalabrasMasLargas(cad_arg, i) {
+            let cadenaDividida = cad_arg.split(" ");
+            let resultado = 0;
+            for (const palabra of cadenaDividida) {
+                if (palabra.length > i) {
+                    resultado++;
+                }
+            }
+            return resultado;
+        }
+
+        cadena = "Hola mu wenas";
+        document.write(cadena + "<br>");
+        document.write(filtraPalabrasMasLargas(cadena, 5));
+
+
+    </script>
+</body>
+
+</html>
