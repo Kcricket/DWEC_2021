@@ -11,7 +11,58 @@
     <script src="GameClasses.js"></script>
     <script>
         var g= new Game(1)
-        g.startGame()
+        g.startGame()   
+        //HAd to create the Piece objects here 
+        //How to make a calss method that creates chess Pieche objects?
+        var towerLw = new Piece('t', 'white', 'h8');
+        var towerRw = new Piece('t', 'white', 'a8');
+
+        var knightLw = new Piece('k', 'white', 'b8');
+        var knightRw = new Piece('k', 'white', 'g8');
+
+        //Fu is the rook
+        var fuLw = new Piece('f', 'white', 'f8');
+        var fuRw = new Piece('f', 'white', 'c8');
+
+
+        var queenW = new Piece('k', 'white', 'e8');
+        var kingW = new Piece('k', 'white', 'd8');
+
+        var pown1W = new Piece('p', 'white', 'a7');
+        var pown2W = new Piece('p', 'white', 'b7');
+        var pown3W = new Piece('p', 'white', 'c7');
+        var pown4W = new Piece('p', 'white', 'd7');
+
+        var pown5W = new Piece('p', 'white', 'e7');
+        var pown6W = new Piece('p', 'white', 'f7');
+        var pown7W = new Piece('p', 'white', 'g7');
+        var pown8W = new Piece('p', 'white', 'h7');
+
+
+
+        //Ahora las negras
+        var towerLb = new Piece('t', 'white', 'h1');
+        var towerRb = new Piece('t', 'white', 'a1');
+
+        var knightLb = new Piece('k', 'white', 'b1');
+        var knightRb = new Piece('k', 'white', 'g1');
+        //Fu is the rook
+        var fuLb = new Piece('f', 'black', 'f1');
+        var fuRb = new Piece('f', 'white', 'c1');
+
+        var queenB= new Piece('k', 'white', 'e1');
+        var kingB = new Piece('k', 'white', 'd1');
+
+        var pown1B = new Piece('p', 'white', 'a1');
+        var pown2B = new Piece('p', 'white', 'b2');
+        var pown3B = new Piece('p', 'white', 'c3');
+        var pown4B = new Piece('p', 'white', 'd4');
+
+        var pown5B = new Piece('p', 'white', 'e2');
+        var pown6B = new Piece('p', 'white', 'f2');
+        var pown7B = new Piece('p', 'white', 'g2');
+        var pown8B = new Piece('p', 'white', 'h2');
+        
     </script>
 </body>
 </html>
