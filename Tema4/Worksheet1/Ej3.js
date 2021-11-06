@@ -7,7 +7,7 @@ t0 = performance.now()
 // }
 
 function tellEnd(){
-    //Wont let me declare a var variable
+    //Wont let me declare a var variableff
     t1 = performance.now();
     console.log('Page loaded at: '+t1 )
 }

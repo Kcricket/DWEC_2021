@@ -15,7 +15,7 @@ function isCtrlPressed(e){
    }else if(e.altKey){
        //This deletes the cell borders
         e.target.style.border = ''
-   }else if(e.key == 'd'){
+   }else if(iskeydw == true){
        //This deletes te whole table
        document.body.innerHTML =''
    }
@@ -55,5 +55,18 @@ window.onload = () => {
         element.style.border='1px solid black'
         element.addEventListener('mouseover', isCtrlPressed)
         //element.addEventListener('mouseover', paintRed)
+        document.onkeydown = inKeyDown;
     });
+}
+function inKeyDown(){
+    let keydw = e.key;
+    if(keydw=='d'){
+        iskeydw = true;
+    }
+}
+function inKeyUp(){
+    let keyup = e.key;
+    if(keyup=='d'){
+        iskeydw = false;
+    }
 }
