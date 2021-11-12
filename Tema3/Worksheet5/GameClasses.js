@@ -14,6 +14,8 @@ class Piece{
         game.moves.push([this.name, position, new Date().toLocaleString()])
         //Also register the position that is now occupied
         game.boardOcupations.push([this.name, position])
+        //To check if the casilla is empti try game.filter(BoardOcupations = not)
+        //Im starting to think that i should create a new class move
     }
 
     validatePown(desiredMove){}

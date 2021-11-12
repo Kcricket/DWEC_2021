@@ -1,0 +1,167 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        
+        #jumbo1{
+            background-color:#94DAFF;
+            flex-grow: 1;
+        }
+        
+        #jumbo2{
+            background-color:#94B3FD ;
+            flex-grow: 1;
+        }
+        #jumboInit{
+            background-color: #94DAFF;
+        }
+        #jumbo0{
+            background-color: #99FEFF;
+        }
+        #bigjumbo{
+            background-color: #B983FF;
+            width: 800px;
+            
+        }
+        #bigestjumbo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    -<script src="Booklist.js"></script>
+
+</head>
+<body>
+    <div class="jumbotron" id="bigestjumbo">
+    <div id ='bigjumbo' class="jumbotron">
+        <div id = 'jumboInit' class="jumbotron">
+         <h1 style ="color: white;" class="display-4" id = 'heading'>MyBookList</h1>
+        </div>  
+        <div id ='jumbo0' class="jumbotron">
+            <form>
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Book Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" placeholder="Ej: La senisienta">
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputAuthor" placeholder="Ej: Mike Tyson">
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Genre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputGenre" placeholder="Ej: Drama">
+                    </div>
+                    </div>
+                <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Read</legend>
+                    <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <label class="form-check-label" for="read">
+                        Read
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="notRead">
+                        Not Read
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                        <label class="form-check-label" for="partiallyRead">
+                        Partially Read
+                        </label>
+                    </div>
+                    </div>
+                </div>
+                </fieldset>
+                <div class="form-group row">
+                <div class="col-sm-2">Checkbox</div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                        Example checkbox
+                    </label>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group row">
+                <div class="col-sm-10">
+                    <button id ='send' type="button" class="btn btn-primary">Send</button>
+                </div>
+                </div>
+            </form>
+        
+        
+        
+    <div id ='jumbo1' class="jumbotron">
+                <h1 class="display-6">Read Books</h1>
+                <div id="accordion">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Collapsible Group Item #1
+                          </button>
+                        </h5>
+                      </div>
+                  
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id = 'card1' class="card-body">
+                            
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            x
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            x
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+        
+    
+    </div>
+</div>
+</body>
+</html>
