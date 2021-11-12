@@ -15,7 +15,9 @@
             --jumbo1: #B983FF;
             --jumbo2: #99FEFF;
             --jumbo3: #94B3FD;
+            --jumbo4: #94DAFF;
         }
+        
     </style>
 </head>
 <body>
@@ -23,8 +25,8 @@
 
     
         <div class="jumbotron" id="jumboBig" style="width: 800px; background-color: var(--jumbo2)">
-            <div class="jumbotron" style="background-color: var(--jumbo3)">
-                <h1 class="display-4">Forms Validation</h1>
+            <div class="jumbotron" style="background-color: var(--jumbo1)">
+                <h1 class="display-4" style="color:var(--jumbo2)">Forms Validation</h1>
             </div>
             <div> 
                 <form>
@@ -58,7 +60,7 @@
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type somethin">
                         <small id="emailHelp" class="form-text text-muted">validarNumero: El parámetro debe contener al menos un dígito..</small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn" style="background-color: var(--jumbo1); color: var(--jumbo2);">Submit</button>
                 </form>
 
             </div>
