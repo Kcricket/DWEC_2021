@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        ar = [1,2,3,4,5,6,7,8,9,0]
+        str = ["holaamigo", "ponis", "Pacois"]
+        str2 = ["abuelas", "arbol", "arcoiris"]
+        //Largest number sort(function)
+        function lessMore(a,b){
+            return a-b
+        }
+        console.log(ar.sort(lessMore))
+
+        //Longest string
+        str.sort(function bigStr(a,b){
+            return b.length - a.length
+            
+        })
+        console.log(str[0]+" -Is the longest string in the array")
+
+
+        //Look for even numbers
+        function evensNOdds(ar){
+            evens =[]
+            odds=[]
+            ar.forEach(element => {
+                (element%2 == 0)? evens.push(element): odds.push(element)
+            });
+            console.log("Even numbers"+evens)
+        }
+        evensNOdds(ar)
+        //Contain is
+        function containsIs(str){
+            str.forEach(element => {
+                var xx= element
+                var x= element.split('')
+                //console.log(x)
+                for(let i=0; i< x.length; i++){
+                    if(x[i]==="i" && x[i+1]==="s"){
+                        console.log("Words that contain is: "+xx)
+                    }
+                }
+            }); 
+        }
+        containsIs(str)
+        //Assert all numbers divisible by three
+        function assertBy(x){
+            asserted =[]
+            notAsserted =[]
+            ar.forEach(element => {
+                (element%x == 0)? asserted.push(element): notAsserted.push(element)
+            });
+            console.log("Asserted by "+x+" : "+asserted)
+        }
+        assertBy(3)
+        
+        //Zip two arrays 
+        //strElement is an element form str
+        //The idea here is to map str, and each element join it whith the str2[i] in that moment
+        var zipAr = str.map(function(strElement, i) {
+            return [strElement, str2[i]];
+        });
+
+        console.log(zipAr)
+
+    </script>
+</body>
+</html>
