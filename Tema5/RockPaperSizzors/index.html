@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="biggest_jumbo" class="jumbotron">
+        <div id="big_jumbo" class="jumbotron">
+            <div id="info_jumbo" class="jumbotron">
+                <h1 class="display-4">Rock Paper Sizzors</h1>
+                <p class="lead">Do your pick and see if you won!.</p>
+                <h1 id="playername" class="display-4"></h1>
+
+            </div>
+            <div id="container" class="jumbotron">
+                <div id="player_cj" class="jumbotron cj">
+                    <div id ="player_jumbo" class="jumbotron"></div>
+                    <h1 id="player_score" class="display-4">You: 0</h1>
+                </div>
+                <div id="jumbo_vs" class="jumbotron">
+                    <h1 class="display-4">Vs</h1>
+                    <div id="play"></div>
+                </div>
+                <div id="cpu_cj" class="jumbotron cj">
+                    <div id="cpu_jumbo" class="jumbotron"></div>
+                    <h1 id="cpu_score" class="display-4">Cpu: 0</h1>
+
+                </div>
+            </div>
+            <h1 id="cpu_score" class="display-4" style="color: var(--yeldark);">Choose here:</h1>
+
+            <div id="jumbo_choice" class="jumbotron">
+                <div id="choice0" class="jumbotron choice" value = "0"></div>
+                <div id="choice1" class="jumbotron choice" value = "1"></div>
+                <div id="choice2" class="jumbotron choice" value = "2"></div>
+            </div>
+            <div id="jumbo_music" class="jumbotron">
+                <audio controls autoplay muted id="audio">
+                    <source src="temaso.ogg" type="audio/ogg">
+                    <source src="temaso.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                  </audio>
+            </div>
+          </div>
+    </div>
+    
+</body>
+</html>

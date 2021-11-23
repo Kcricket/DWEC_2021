@@ -1,0 +1,88 @@
+:root{
+    --dark: #0F2C67;
+    --red: #CD1818;
+    --yeldark: #F3950D;
+    --yelmid: #F4E185;
+
+}
+audio::-webkit-media-controls-play-button{
+    background-color:green;
+}
+#biggest_jumbo{
+    background-color: var(--dark);
+}
+#big_jumbo{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+}
+
+#container{
+    background-color: var(--yeldark);
+    display: flex;
+    justify-content: space-between;
+    height: 450px;
+}
+#info_jumbo{
+    background-color: var(--yeldark);
+    color: var(--dark);
+
+}
+.cj{
+    background-color: var(--yeldark);
+    color: var(--dark);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#player_jumbo{ 
+    background-color: var(--yelmid);
+    width: 200px;
+}
+#cpu_jumbo{
+    background-color: var(--red);
+    width: 200px;
+}
+#jumbo_vs{
+    background-color: var(--yeldark);
+}
+#jumbo_choice{
+    background-color: var(--yeldark);
+    display: flex;
+    justify-content: space-between;
+}
+.choice{
+    background-color: var(--dark);
+    width: 150px;
+}
+#choice0{
+    background-image: url(f0.jpg);
+   
+    background-size: cover;
+}
+
+#choice1{
+    background-image: url(f1.jpg);
+    background-size: cover;
+}
+#choice2{
+    background-image: url(f2.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+#jumbo_music{
+    background-color: var(--yeldark);
+    height: 100px;
+    display: flex;
+    border-radius: 90px;
+    align-items: center;
+    justify-content: center;
+}
+#audio{
+    width: 600px; 
+    box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+    border-radius: 90px;
+    transform: scale(1.05);
+}
