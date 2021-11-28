@@ -1,7 +1,7 @@
 :root{
-    --dark: #0F2C67;
-    --red: #CD1818;
-    --yeldark: #F3950D;
+    --dark: #222831;
+    --red: #393E46;
+    --yeldark: #00ADB5;
     --yelmid: #F4E185;
 
 }
@@ -57,17 +57,17 @@ audio::-webkit-media-controls-play-button{
     width: 150px;
 }
 #choice0{
-    background-image: url(f0.jpg);
+    background-image: url(../media/f0.jpg);
    
     background-size: cover;
 }
 
 #choice1{
-    background-image: url(f1.jpg);
+    background-image: url(../media/f1.jpg);
     background-size: cover;
 }
 #choice2{
-    background-image: url(f2.jpg);
+    background-image: url(../media/f2.jpg);
     background-size: cover;
     background-position: center;
 

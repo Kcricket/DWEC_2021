@@ -1,5 +1,5 @@
-
-class Player{
+import {game1} from '../js/index.js'
+export class Player{
     constructor(name){
         this.name = name;
         this.history = [];
@@ -11,7 +11,7 @@ class Player{
     
 }
 
-class Game{
+export class Game{
     constructor(player){
         this.player = player
         this.score ;
@@ -35,25 +35,6 @@ class Game{
 
         return player1;
     }
-    compare(result){
-          //Create number for cpu and compare with player 
-          cpuResult = Math.floor(Math.random()*3)
-          if (parseInt(e.target.getAttribute('value')) == 0){
-              if( cpuResult == 1){
-                  //Rock Wins
-                  console.log('win')
-                  scorePlayer.value = 1
-              }else if(cpuResult == 2){
-                  console.log('lost')
-                  //Rock lost
-                  scorePlayer.value = 1
-  
-              }else
-              //Empate
-              console.log('empate')
-          }
-          //Set score
-    };
     setScore(){
         var scoreCpu = document.getElementById("cpu_score");
         var scorePlayer = document.getElementById('player_score');
@@ -71,97 +52,81 @@ class Game{
         //option;
         //Chooose option
         switch (id) {
+            //Lo comparo según la id de la foto para no complicarme
             //Rock ----------------------------------------------------
             case 'choice0': // foo es 0, por lo tanto se cumple la condición y se ejecutara el siguiente bloque
-              console.log('rock');
-              var result ;
-              if( cpuResult ===1){
-                jumboPlayer.style.backgroundImage = `url(f${0}.jpg)`;
+                console.log('rock');
+                jumboPlayer.style.backgroundImage = `url(./media/f${0}.jpg)`;
                 jumboPlayer.style.backgroundSize= 'cover';
-                console.log('lost')
-                jumboCpu.style.backgroundImage = `url(f${1}.jpg)`;
-                jumboCpu.style.backgroundSize= 'cover';
-                game1.score[1] += 1 
-            
-                }else if(cpuResult === 2){
-                    console.log('win')
-                    jumboCpu.style.backgroundImage = `url(f${2}.jpg)`;
-                    jumboCpu.style.backgroundSize= 'cover';
-                    game1.score[0] += 1 
-
-
-                }else if( cpuResult === 0){
-                jumboCpu.style.backgroundImage = `url(f${0}.jpg)`;
-                jumboCpu.style.backgroundSize= 'cover'
-                console.log('empate')
-                }   
-                game1.setScore()
-                
-                break;
-                //Paper ---------------------------------------------------
-
-            case 'choice1': // No hay sentencia "break" en el 'case 0:', por lo tanto este caso también será ejecutado
-              console.log('paper');
-              jumboPlayer.style.backgroundImage = `url(f${1}.jpg)`;
-              jumboPlayer.style.backgroundSize= 'cover';
-              if( cpuResult ===1){
-                  //SetCpu
-                jumboCpu.style.backgroundImage = `url(f${1}.jpg)`;
-                jumboCpu.style.backgroundSize= 'cover';
-                //Add winner
-                console.log('empate')
-                 
-            
-                }else if(cpuResult === 2){
+                if( cpuResult ===1){
+                    //USar ./ y no ../ para el js del style, aunque en css sea con ../
                     console.log('lost')
-                    jumboCpu.style.backgroundImage = `url(f${2}.jpg)`;
+                    jumboCpu.style.backgroundImage = `url(./media/f${1}.jpg)`;
                     jumboCpu.style.backgroundSize= 'cover';
                     game1.score[1] += 1 
-
-
+                }else if(cpuResult === 2){
+                    console.log('win')
+                    jumboCpu.style.backgroundImage = `url(./media/f${2}.jpg)`;
+                    jumboCpu.style.backgroundSize= 'cover';
+                    game1.score[0] += 1 
                 }else if( cpuResult === 0){
-                jumboCpu.style.backgroundImage = `url(f${0}.jpg)`;
-                jumboCpu.style.backgroundSize= 'cover';
-                game1.score[0] += 1
-
-                //Set score
-                
-                console.log('win')
-
-                }
+                    jumboCpu.style.backgroundImage = `url(./media/f${0}.jpg)`;
+                    jumboCpu.style.backgroundSize= 'cover'
+                    console.log('empate')
+                }   
                 game1.setScore()
+                break;
 
+            //Paper ---------------------------------------------------
+            case 'choice1': // No hay sentencia "break" en el 'case 0:', por lo tanto este caso también será ejecutado
+              console.log('paper');
+              jumboPlayer.style.backgroundImage = `url(./media/f${1}.jpg)`;
+              jumboPlayer.style.backgroundSize= 'cover';
+                if( cpuResult ===1){
+                  //SetCpu
+                    jumboCpu.style.backgroundImage = `url(./media/f${1}.jpg)`;
+                    jumboCpu.style.backgroundSize= 'cover';
+                    //Add winner
+                    console.log('empate');
+                }else if(cpuResult === 2){
+                    console.log('lost')
+                    jumboCpu.style.backgroundImage = `url(./media/f${2}.jpg)`;
+                    jumboCpu.style.backgroundSize= 'cover';
+                    game1.score[1] += 1 
+                }else if( cpuResult === 0){
+                    jumboCpu.style.backgroundImage = `url(./media/f${0}.jpg)`;
+                    jumboCpu.style.backgroundSize= 'cover';
+                    game1.score[0] += 1;
+                    //Set score
+                    console.log('win')
+                }
+                game1.setScore();
               //this.history.add(1)
               break; // Al encontrar un "break", no será ejecutado el 'case 2:'
+
+
+              // Sizzors -------------------------------------------------------------------
             case 'choice2':
-                jumboPlayer.style.backgroundImage = `url(f${2}.jpg)`;
+                jumboPlayer.style.backgroundImage = `url(./media/f${2}.jpg)`;
                 jumboPlayer.style.backgroundSize= 'cover';
                 if( cpuResult ===1){
                     //SetCpu
-                  jumboCpu.style.backgroundImage = `url(f${1}.jpg)`;
+                  jumboCpu.style.backgroundImage = `url(./media/f${1}.jpg)`;
                   jumboCpu.style.backgroundSize= 'cover';
                   //Add winner
-                  game1.score[0] += 1 
-
-                  console.log('win')
-                   
-              
-                  }else if(cpuResult === 2){
+                  game1.score[0] += 1;
+                  console.log('win');
+                }else if(cpuResult === 2){
                       console.log('empate')
-                      jumboCpu.style.backgroundImage = `url(f${2}.jpg)`;
+                      jumboCpu.style.backgroundImage = `url(./media/f${2}.jpg)`;
                       jumboCpu.style.backgroundSize= 'cover';
                       //game1.score[1] += 1 
-  
-  
-                  }else if( cpuResult === 0){
-                  jumboCpu.style.backgroundImage = `url(f${0}.jpg)`;
+                }else if( cpuResult === 0){
+                  jumboCpu.style.backgroundImage = `url(./media/f${0}.jpg)`;
                   jumboCpu.style.backgroundSize= 'cover';
                   game1.score[1] += 1
                   console.log('lost')
-  
                   }
-       
-
               console.log('sizzors');
               game1.setScore()
 
@@ -172,13 +137,3 @@ class Game{
 
 }
 
-window.onload = () => {
-    game1 = new Game();
-    gamer = game1.createPlayer();
-
-    game1.startGame(gamer)
-    choices = document.querySelectorAll('.choice');
-    choices.forEach(element => {
-        element.addEventListener('click', game1.play)
-    });
-}
