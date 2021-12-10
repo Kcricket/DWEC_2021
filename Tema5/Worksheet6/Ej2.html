@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+</head>
+<body>
+<table id="table" width="100%" border="1" cellpadding="0" cellspacing="0" style="display: none;">
+<tr>
+<td ></td>
+<td>pais</td>
+<td>viajeros</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Francia</td>
+<td>89400</td>
+</tr>
+<tr>
+<td>2</td>
+<td> España</td>
+<td>83509</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Estados Unidos</td>
+<td>79256</td>
+</tr>
+<tr>
+<td>4</td>
+<td>China</td>
+<td>65700</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Italia</td>
+<td>64513</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Turquía</td>
+<td>51192</td>
+</tr>
+<tr>
+<td>7</td>
+<td>México</td>
+<td>45024</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Tailandia</td>
+<td>39797</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Alemania</td>
+<td>39563</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Reino Unido</td>
+<td>39418</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Japón</td>
+<td>32182</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Austria</td>
+<td>31884</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Grecia</td>
+<td>31348</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Malasia</td>
+<td>26101</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Portugal</td>
+<td>24600</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Rusia</td>
+<td>24419</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Hong Kong (China)</td>
+<td>23752</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Canadá</td>
+<td>22145</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Polonia</td>
+<td>21155</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Países Bajos</td>
+<td>20128</td>
+</tr>
+</table>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+<script type="text/javascript">
+function tableToJson(table) {
+    var data = [];
+
+    // first row needs to be headers
+    var headers = [];
+    for (var i=0; i<table.rows[0].cells.length; i++) {
+        headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi,'');
+    }
+
+    // go through cells
+    for (var i=1; i<table.rows.length; i++) {
+
+        var tableRow = table.rows[i];
+        var rowData = {};
+
+        for (var j=0; j<tableRow.cells.length; j++) {
+
+            rowData[ headers[j] ] = tableRow.cells[j].innerHTML;
+
+        }
+
+        data.push(rowData);
+    }       
+
+    return data;
+}
+//var table = JSON.stringify(tableToJson(document.getElementById('table')));
+var table = tableToJson(document.getElementById('table'))
+var paises =[]
+var viajeros= []
+for (let i=0; i<6; i++){
+  paises.push(table[i].pais)
+  viajeros.push(table[i].viajeros)
+}
+console.log(paises)
+console.log(viajeros)
+
+console.log(table[0].viajeros)
+
+
+
+
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = new google.visualization.DataTable();
+       
+        
+        data.addColumn('string', 'Country')
+        data.addColumn('number', 'Population')
+        for (let i=0; i<6; i++){
+          console.log(viajeros)
+          data.addRow([table[i].pais, parseInt(table[i].viajeros)]);
+        }
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+  </script>
+
+</body>
+</html>
