@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        namesAr = ['juan', 'pepe', 'alberto', 'jose','jaime']
+        function getTheJs(){
+            var chosen = []
+            namesAr.forEach(element => {
+                var xx= element
+                var x= element.split('')
+                //console.log(x)
+                for(let i=0; i< x.length; i++){
+                    if(x[i]==="j"){
+                        chosen.push(xx)
+                        console.log("Words that contain is, are: "+xx)
+                    }
+                }
+            }); 
+            
+            sortedChosen= chosen.sort()
+            console.log(sortedChosen)
+        }
+        getTheJs()
+    </script>
+</body>
+</html>

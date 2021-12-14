@@ -10,6 +10,7 @@
 <body>
     <script>
         ar = [1,2,3,4,5,6,7,8,9,0]
+        ar2 = [9,3,6,13,14,17,12,33,23,31]
         str = ["holaamigo", "ponis", "Pacois"]
         str2 = ["abuelas", "arbol", "arcoiris"]
         //Largest number sort(function)
@@ -37,7 +38,7 @@
         }
         evensNOdds(ar)
         //Contain is
-        function containsIs(str){
+        function containsIs(){
             str.forEach(element => {
                 var xx= element
                 var x= element.split('')
@@ -49,7 +50,7 @@
                 }
             }); 
         }
-        containsIs(str)
+        containsIs()
         //Assert all numbers divisible by three
         function assertBy(x){
             asserted =[]
@@ -69,6 +70,32 @@
         });
 
         console.log(zipAr)
+
+        //Sort from less to more zipped Array
+        function sortZip(){
+            var zipAr = ar.map(function(strElement, i) {
+            var zipped = [strElement, ar2[i]];
+            console.log(zipped)
+            zipped.sort((a,b) => {
+                zippedAndSorted = a-b
+            });
+            });
+            console.log(zippedAndSorted)
+
+        }
+        sortZip();
+        
+        //Remove first word in array
+        str.shift()
+        console.log(str)
+        //And place a word
+        function switchFirstWord(word){
+            str.shift()
+
+            shiftedAndPushed = str.push(word);
+            console.log(shiftedAndPushed)
+        }
+        switchFirstWord("abuela");
 
     </script>
 </body>
