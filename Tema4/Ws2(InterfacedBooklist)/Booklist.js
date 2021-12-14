@@ -42,16 +42,37 @@ class Booklist {
     
         //Create the book
         var newBook = new Book(name.value, genre.value, author.value);
+        // Local storage, para guardar al recargar 
         booklist1.add(newBook);
+
+        localStorage.setItem("titles", JSON.stringify(booklist1.booklist))
         
-        //Create and style elements
-        var bookli = document.createElement("div");
-        bookli.id= str;
-        bookli.className = "alert alert-"+alertClassesBootstr[Math.floor(Math.random()*3)];
-        bookli.role = "alert";
-        //bookli.dataToggle = "tooltip"
-        // bookli.setAttribute('data-toggle', 'modal')
-        // bookli.setAttribute('data-target', '#exampleModal')
+            
+            name.value= '';
+            author.value = '';
+            genre.value = '';
+
+            booklist1.showBook(newBook)
+        }
+        showBook(newBook){
+            var newBookx = JSON.stringify(localStorage.getItem('titles'))
+            console.log(newBook)
+            console.log(newBookx)
+            //For Different color cards 
+            var alertClassesBootstr = ['primary', 'secondary', 'success', 'warning', 'danger']
+            //Get the elements
+            var name = document.querySelector('#inputName')
+            var author = document.querySelector('#inputAuthor')
+            var genre = document.querySelector('#inputGenre')
+            var str = 'webo'+index
+            index++;
+            var bookli = document.createElement("div");
+            bookli.id= str;
+            bookli.className = "alert alert-"+alertClassesBootstr[Math.floor(Math.random()*3)];
+            bookli.role = "alert";
+            //bookli.dataToggle = "tooltip"
+            // bookli.setAttribute('data-toggle', 'modal')
+            // bookli.setAttribute('data-target', '#exampleModal')
         bookli.innerHTML = newBook.title+', '+newBook.author+', '+newBook.genre;  
         bookli.title = newBook.title; 
         bookli.style = "display :flex; justify-content: space-between; align-items: center"
@@ -71,27 +92,12 @@ class Booklist {
     
         buttonDelete.addEventListener('click', booklist1.deleteItem)
         buttonFinish.addEventListener('click', booklist1.finishBookx)
-
-        // var bookLi =`
-        // <div id = "`+str+`" class="alert alert-primary" role="alert">
-        //     `+name.value+`,`+author.value+','+genre.value+`
-        // </div>
-        // `;
-        // document.querySelector('#card1').innerHTML += bookLi;
         document.querySelector('#card1').appendChild(bookli)
         bookli.appendChild(buttonContainer)
     
         buttonContainer.appendChild(buttonDelete)
         buttonContainer.appendChild(buttonFinish)
-    
-        
-        
-        
-        name.value= '';
-        author.value = '';
-        genre.value = '';
     }
-    
 
 
     deleteItem(e){
@@ -139,6 +145,7 @@ var index = 0;
 
 
 window.onload = function() {
+    var list = localStorage.getItem('titles') 
     //book1 = new Book("weo", "drama", "mike tyson")
     booklist1 = new Booklist();
     //booklist1.add(book1)
