@@ -2,16 +2,29 @@ var slideIndex = 1;
 var totalIndex = 3;
 
 window.onload = () => {
-    cambiaImg()
     showSlides(slideIndex);
+    cambiaImg()
+
     
 }
 
 
 function cambiaImg(){
-    var mc = new Hammer(document.querySelector('img'));
-    mc.on('panleft', plusSlides(-1));
-    mc.on('panright', plusSlides(1));
+    var mc = new Hammer(document.querySelector('.slideshow-container'));
+
+
+    mc.add( new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 50 }) );
+    mc.add( new Hammer.Tap({ event: 'quadrupletap', taps: 4 }) );
+    
+    mc.on("panleft", function(){
+        plusSlides(-1)
+    });
+    mc.on("panright", function(){
+        plusSlides(+1)
+    });
+    //mc.on("panright", plusSlides(+1));
+
+    //mc.on("quadrupletap", handleTaps);
 }
 function plusSlides(n) {
     showSlides(slideIndex += n);
