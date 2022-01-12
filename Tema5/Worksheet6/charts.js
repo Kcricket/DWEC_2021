@@ -81,20 +81,46 @@ function drawGraph() {
           chart: {
             title: 'Company Performance',
             subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            
+
+          },
+          animation:{
+            duration: 2000,
+            easing: 'out',
+            //startup: true,
           },
           bars: 'vertical',
           vAxis: {format: 'decimal'},
           height: 500,
-          colors: ['#1b9e77', '#d95f02', '#7570b3']
+          colors: ['#1b9e77', '#d95f02', '#7570b3'],
+          vAxis: {minValue:0, maxValue:10000000}
+
         };
 
-        var chart = new google.charts.Bar(document.getElementById('Anthony_chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('Anthony_chart_div'));
+        chart.draw(data, options);
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-
-
+// -----------------------------------Animation starts here-------------------------------------------
+        function drawGraph2(){
+          chart.draw(data, options);
+          
+        }
+        //drawGraphAnim()
         
+          setTimeout(function(){
+            for (let i=0; i<10; i++){
+              var newValue = data.getValue(i, 1)+3000000;
+              data.setValue(i,1, newValue);
+              drawGraph2()
+  
+            }
+            //drawGraphAnim()
+  
+          },10000)
+        
+   
 }
+
       // Load Charts and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
       google.charts.load('current', {'packages':['bar']});
