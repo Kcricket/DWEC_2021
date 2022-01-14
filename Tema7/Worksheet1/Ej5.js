@@ -19,7 +19,7 @@ window.onload = () => {
     <button class="btn">Borrar</button>
     `
     $(".btn").on("click", function(){
-        $("ul li").first().hide()
+        //$("ul li").first().hide()
         $("ol li").first().hide()
     })
 }
